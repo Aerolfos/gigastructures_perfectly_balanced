@@ -1,0 +1,137 @@
+namespace = giga_federation_cap
+
+### on_join_federation
+## This = Federation leader
+## From = Joining member
+
+# make a federation scoped version of gigas planet/moon craft cap variable
+country_event = {
+	id = giga_federation_cap.001
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	immediate = {
+		save_event_target_as = fed_leader
+		from = { save_event_target_as = fed_joiner }
+
+		# scope to federation
+		federation = {
+			# takes the cap variable from the fed leader
+			set_variable = { which = giga_warmoon_cap_fed value = { scope = event_target:fed_leader variable = giga_warmoon_cap } }
+			set_variable = { which = giga_warplanet_cap_fed value = { scope = event_target:fed_leader variable = giga_warplanet_cap } }
+			set_variable = { which = giga_gigaforge_cap_fed value = { scope = event_target:fed_leader variable = giga_gigaforge_cap } }
+
+			# if federation doesnt have a current value, store the current variable from the fed leader
+			if = {
+				limit = { NOT = { is_variable_set = giga_current_warmoon_fed } }
+				set_variable = { which = giga_current_warmoon_fed value = { scope = event_target:fed_leader variable = giga_current_warmoon } }
+			}
+			if = {
+				limit = { NOT = { is_variable_set = giga_current_warplanet_fed } }
+				set_variable = { which = giga_current_warplanet_fed value = { scope = event_target:fed_leader variable = giga_current_warplanet } }
+			}
+			if = {
+				limit = { NOT = { is_variable_set = giga_current_gigaforge_fed } }
+				set_variable = { which = giga_current_gigaforge_fed value = { scope = event_target:fed_leader variable = giga_current_gigaforge } }
+			}
+			
+			# check if joining member has more current megas
+			# if so, set fed value to that one
+			if = {
+				limit = { check_variable = { which = giga_current_warmoon_fed value < { scope = event_target:fed_joiner variable = giga_current_warmoon } } }
+				set_variable = { which = giga_current_warmoon_fed value = { scope = event_target:fed_joiner variable = giga_current_warmoon } }
+			}
+			if = {
+				limit = { check_variable = { which = giga_current_warplanet_fed value < { scope = event_target:fed_joiner variable = giga_current_warplanet } } }
+				set_variable = { which = giga_current_warplanet_fed value = { scope = event_target:fed_joiner variable = giga_current_warplanet } }
+			}
+			if = {
+				limit = { check_variable = { which = giga_current_gigaforge_fed value < { scope = event_target:fed_joiner variable = giga_current_gigaforge } } }
+				set_variable = { which = giga_current_gigaforge_fed value = { scope = event_target:fed_joiner variable = giga_current_gigaforge } }
+			}
+		}
+	}
+}
+
+### on_ship_destroyed_victim
+## This = owner of ship 1 (destroyed)
+## From = owner of ship 2 (combatant)
+## FromFrom = ship 1
+## FromFromFrom = ship 2
+
+# lower variable for current number of moons when one is destroyed (for federation too)
+country_event = {
+	id = giga_federation_cap.002
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { 
+			is_ship_size = giga_massive_planet
+		}
+	}
+
+	immediate = {
+		save_event_target_as = moon_owner
+		from = { save_event_target_as = moon_destroyer }
+
+		# remove one for owner as long as variable is more than 0 (or stuff breaks)
+		if = {
+			limit = { check_variable = { which = giga_current_warmoon value > 0 } }
+			subtract_variable = { which = giga_current_warmoon value = 1 }
+		}
+		# remove one for federation as long as variable is more than 0 (or stuff breaks)
+		if = {
+			limit = { has_federation = yes }
+			federation = {
+				if = {
+					limit = { check_variable = { which = giga_current_warmoon_fed value > 0 } }
+					subtract_variable = { which = giga_current_warmoon_fed value = 1 }
+				}
+			}
+		}
+	}
+}
+
+### on_ship_destroyed_victim
+## This = owner of ship 1 (destroyed)
+## From = owner of ship 2 (combatant)
+## FromFrom = ship 1
+## FromFromFrom = ship 2
+
+# lower variable for current number of planets when one is destroyed (for federation too)
+country_event = {
+	id = giga_federation_cap.003
+	hide_window = yes
+	
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { 
+			is_ship_size = giga_planet_behemoth
+		}
+	}
+
+	immediate = {
+		save_event_target_as = moon_owner
+		from = { save_event_target_as = moon_destroyer }
+
+		# remove one for owner as long as variable is more than 0 (or stuff breaks)
+		if = {
+			limit = { check_variable = { which = giga_current_warplanet value > 0 } }
+			subtract_variable = { which = giga_current_warplanet value = 1 }
+		}
+		# remove one for federation as long as variable is more than 0 (or stuff breaks)
+		if = {
+			limit = { has_federation = yes }
+			federation = {
+				if = {
+					limit = { check_variable = { which = giga_current_warplanet_fed value > 0 } }
+					subtract_variable = { which = giga_current_warplanet_fed value = 1 }
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,57 @@
+[h2]As all things should be.[/h2]
+
+Updated to 3.0, and should work for all subsequent sub-versions of 3.0.
+
+[u]If your launcher claims incompatibility, try resubscribing to the mod on the workshop first - mods do not always update properly.[/u]
+
+This mod changes some gigastructure production numbers and districts in the quest for the mythical state of "Balanced". Mostly the Gas Giant Habitats annoying me by being so bad in base gigas.
+
+[u]To-do:[/u] Add a game start event to configure changes. Everything below should be toggleable.
+
+[h2]Changes[/h2]
+[u]Neutronium Gigaforge:[/u]
+[list]
+    [*]-50% alloy production on all stages (final stage before: 750 after: 375)
+    [*]-50% energy upkeep on all stages (final stage before: 1250 after: 625)
+    [*]Half of the upkeep is now mineral upkeep (final stage before: 0 after: 625)
+	[*]Alloy cost has been increased on all stages
+[/list]
+
+[u]Ruined Attack Moon:[/u]
+All ruined moons and planetcraft are removed 5 days after game start.
+It is still possible to upgrade ruined moons, like for example after losing one in combat, but there won't be any on the map.
+
+[u]Megastructure caps:[/u]
+Federations now have their own version of the per-country cap for 
+[list]
+    [*]Neutronium Gigaforge
+    [*]Attack Moon
+    [*]Behemoth Planetcraft
+[/list]
+As such, if game cap is 1 and you join a federation where a member has a moon, you are no longer able to build new moons.
+Consider the feature experimental, report weird edge-cases that happen. 
+
+Losing a moon/planet subtracts 1 from cap for both player and federation, repairing a moon adds 1 to cap for both (this does not happen in vanilla gigas and is a pain to account for all edge-cases...)
+
+[u]Gas Giant Habitat:[/u]
+Received their own district set (previously reused elysium and equatorial shipyard districts partially).
+Own set of planetary designations, but is just a copy of vanilla habitat ones (would have to overwrite vanilla if they weren't separate)
+Max allowed size is now 30 (was 25).
+Ideal planet class (always 100% habitability, like habitats) - this change is debatable. Can use modifier for 100% hab for origin, and leave rest alone. Not sure.
+Districts brought in line with vanilla habitats. 
+All districts cost 400 minerals now (was 500).
+[list]
+    [*]Habitation District - +8 Housing +1 Clerks/2 Maintenance Drones (and Bug branch rooftop farmer civic is now accounted for) +1 Building Slot - Upkeep 2 Energy
+    [*]Industrial District - +3 Housing +1 Metallurgist +1 Artisan - Upkeep 2 Energy
+    [*]Research District - +3 Housing +3 Researchers - Upkeep 2 Energy
+    [*]Energy District - +4 Housing +4 Technicians (1 extra) - Upkeep 2 Energy
+	[*]Gas Harvester District - +3 Housing +3 Gas Harvesters (buffed) - Upkeep 3 Energy
+[/list]
+Gas harvesters now produce 2 exotic gas (was 1.5) for no upkeep as they are worker jobs (was 8 energy and 3 minerals(!)).
+Fluffy plains deposits are twice as powerful, giving 4 potential gas districts each.
+The special buildings actually do something:
+[list]
+	[*]Atmospheric Fusion Facility - 500 minerals, upkeep 5 energy - 10 minerals production, 1 matter synthesizer job per 10 pops
+    [*]Atmospheric Mote Extractor - 500 minerals, upkeep 2 energy - 2 volatile motes production, 1 mote harvester job per 20 pops
+    [*]Floater Analysis Complex - 600 minerals, upkeep 4 energy - 20 society research, 1 researcher job per 25 pops
+[/list]

@@ -1,0 +1,1 @@
+on_game_start = { events = { giga_ruined_moon_clear.001 } }			# Wait a bit for system spawning, then clear all the moons/planetcraft
