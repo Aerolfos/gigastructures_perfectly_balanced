@@ -18,37 +18,79 @@ country_event = {
 		# scope to federation
 		federation = {
 			# takes the cap variable from the fed leader
-			set_variable = { which = giga_warmoon_cap_fed value = { scope = event_target:fed_leader variable = giga_warmoon_cap } }
-			set_variable = { which = giga_warplanet_cap_fed value = { scope = event_target:fed_leader variable = giga_warplanet_cap } }
-			set_variable = { which = giga_gigaforge_cap_fed value = { scope = event_target:fed_leader variable = giga_gigaforge_cap } }
+			set_variable = { 
+				which = giga_warmoon_cap_fed 
+				value = event_target:fed_leader.giga_warmoon_cap 
+			}
+			set_variable = { 
+				which = giga_warplanet_cap_fed 
+				value = event_target:fed_leader.giga_warplanet_cap 
+			}
+			set_variable = { 
+				which = giga_gigaforge_cap_fed 
+				value = event_target:fed_leader.giga_gigaforge_cap 
+			}
 
 			# if federation doesnt have a current value, store the current variable from the fed leader
 			if = {
 				limit = { NOT = { is_variable_set = giga_current_warmoon_fed } }
-				set_variable = { which = giga_current_warmoon_fed value = { scope = event_target:fed_leader variable = giga_current_warmoon } }
+				set_variable = { 
+					which = giga_current_warmoon_fed 
+					value = event_target:fed_leader.giga_current_warmoon 
+				}
 			}
 			if = {
 				limit = { NOT = { is_variable_set = giga_current_warplanet_fed } }
-				set_variable = { which = giga_current_warplanet_fed value = { scope = event_target:fed_leader variable = giga_current_warplanet } }
+				set_variable = { 
+					which = giga_current_warplanet_fed 
+					value = event_target:fed_leader.giga_current_warplanet 
+				}
 			}
 			if = {
 				limit = { NOT = { is_variable_set = giga_current_gigaforge_fed } }
-				set_variable = { which = giga_current_gigaforge_fed value = { scope = event_target:fed_leader variable = giga_current_gigaforge } }
+				set_variable = { 
+					which = giga_current_gigaforge_fed 
+					value = event_target:fed_leader.giga_current_gigaforge 
+				}
 			}
 			
 			# check if joining member has more current megas
 			# if so, set fed value to that one
 			if = {
-				limit = { check_variable = { which = giga_current_warmoon_fed value < { scope = event_target:fed_joiner variable = giga_current_warmoon } } }
-				set_variable = { which = giga_current_warmoon_fed value = { scope = event_target:fed_joiner variable = giga_current_warmoon } }
+				limit = { 
+					check_variable = { 
+						which = giga_current_warmoon_fed 
+						value < event_target:fed_joiner.giga_current_warmoon 
+					} 
+				}
+				set_variable = { 
+					which = giga_current_warmoon_fed 
+					value = event_target:fed_joiner.giga_current_warmoon 
+				}
 			}
 			if = {
-				limit = { check_variable = { which = giga_current_warplanet_fed value < { scope = event_target:fed_joiner variable = giga_current_warplanet } } }
-				set_variable = { which = giga_current_warplanet_fed value = { scope = event_target:fed_joiner variable = giga_current_warplanet } }
+				limit = { 
+					check_variable = { 
+						which = giga_current_warplanet_fed 
+						value < event_target:fed_joiner.giga_current_warplanet 
+					} 
+				}
+				set_variable = { 
+					which = giga_current_warplanet_fed 
+					value = event_target:fed_joiner.giga_current_warplanet 
+				}
 			}
 			if = {
-				limit = { check_variable = { which = giga_current_gigaforge_fed value < { scope = event_target:fed_joiner variable = giga_current_gigaforge } } }
-				set_variable = { which = giga_current_gigaforge_fed value = { scope = event_target:fed_joiner variable = giga_current_gigaforge } }
+				limit = { 
+					check_variable = { 
+						which = giga_current_gigaforge_fed 
+						value < event_target:fed_joiner.giga_current_gigaforge 
+					} 
+				}
+				set_variable = { 
+					which = giga_current_gigaforge_fed 
+					value = event_target:fed_joiner.giga_current_gigaforge 
+				}
 			}
 		}
 	}
