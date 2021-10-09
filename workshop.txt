@@ -1,26 +1,14 @@
 [h2]As all things should be.[/h2]
 
-Updated to 3.0, and should work for all subsequent sub-versions of 3.0.
+Updated to 3.1, and should work for all subsequent sub-versions of 3.1.
 
 [u]If your launcher claims incompatibility, try resubscribing to the mod on the workshop first - mods do not always update properly.[/u]
 
-This mod changes some gigastructure production numbers and districts in the quest for the mythical state of "Balanced". Mostly the Gas Giant Habitats annoying me by being so bad in base gigas.
+This mod makes miscellaneous changes to the Gigastructures mod out of personal preference. Right now it doesn't do much - base gigas "stole" my changes.
 
 [u]To-do:[/u] Add a game start event to configure changes. Everything below should be toggleable.
 
 [h2]Changes[/h2]
-[u]Neutronium Gigaforge:[/u]
-[list]
-    [*]-50% alloy production on all stages (final stage before: 750 after: 375)
-    [*]-50% energy upkeep on all stages (final stage before: 1250 after: 625)
-    [*]Half of the upkeep is now mineral upkeep (final stage before: 0 after: 625)
-	[*]Alloy cost has been increased on all stages
-[/list]
-
-[u]Ruined Attack Moon:[/u]
-All ruined moons and planetcraft are removed 5 days after game start.
-It is still possible to upgrade ruined moons, like for example after losing one in combat, but there won't be any on the map.
-
 [u]Megastructure caps:[/u]
 Federations now have their own version of the per-country cap for 
 [list]
@@ -32,6 +20,27 @@ As such, if game cap is 1 and you join a federation where a member has a moon, y
 Consider the feature experimental, report weird edge-cases that happen. 
 
 Losing a moon/planet subtracts 1 from cap for both player and federation, repairing a moon adds 1 to cap for both (this does not happen in vanilla gigas and is a pain to account for all edge-cases...)
+
+[u]Localization:[/u]
+[list]
+    [*]Renames the new Birch Void Sphere into "Elowiny Sphere".
+[/list]
+Yes, this is obviously a critically important change.
+
+[h2]Integrated/obsolete Changes[/h2]
+[u]Neutronium Gigaforge:[/u]
+[list]
+    [*]-50% alloy production on all stages (final stage before: 750 after: 375)
+    [*]-50% energy upkeep on all stages (final stage before: 1250 after: 625)
+    [*]Half of the upkeep is now mineral upkeep (final stage before: 0 after: 625)
+	[*]Alloy cost has been increased on all stages
+[/list]
+[u]Gigaforge now has halved alloy production in base gigas.[/u]
+
+[u]Ruined Attack Moon:[/u]
+All ruined moons and planetcraft are removed 5 days after game start.
+It is still possible to upgrade ruined moons, like for example after losing one in combat, but there won't be any on the map.
+[u]Gigas lets you configure ruined warship appearance rates on its own now (which is a better feature than this anyway).[/u]
 
 [u]Gas Giant Habitat:[/u]
 Received their own district set (previously reused elysium and equatorial shipyard districts partially).
@@ -55,3 +64,4 @@ The special buildings actually do something:
     [*]Atmospheric Mote Extractor - 500 minerals, upkeep 2 energy - 2 volatile motes production, 1 mote harvester job per 20 pops
     [*]Floater Analysis Complex - 600 minerals, upkeep 4 energy - 20 society research, 1 researcher job per 25 pops
 [/list]
+[u]Taken directly from this mod into base gigas (with my encouragement).[/u]
