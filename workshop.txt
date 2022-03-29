@@ -1,6 +1,6 @@
 [h2]As all things should be.[/h2]
 
-Updated to 3.1, and should work for all subsequent sub-versions of 3.1.
+Updated to 3.3, and should work for all subsequent sub-versions of 3.3.
 
 [u]If your launcher claims incompatibility, try resubscribing to the mod on the workshop first - mods do not always update properly.[/u]
 
