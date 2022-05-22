@@ -1,3 +1,5 @@
+### THIS EVENT IS NO LONGER CALLED BY ANYTHING ###
+### PLACEHOLDER ###
 namespace = giga_federation_cap
 
 ### on_join_federation

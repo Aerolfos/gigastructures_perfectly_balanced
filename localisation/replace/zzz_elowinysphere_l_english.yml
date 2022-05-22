@@ -8,6 +8,6 @@ l_english:
  trait_pc_void_birch_preference_desc:0 "This species is based."
  sc_void_birch_built:0 "$pc_void_birch$"
  vsbw.1.title:0 "It is done."
- vsbw.1.desc:0 "After a long 24 years, it is complete.\n[center_of_the_universe.GetName] has been successfully made into a Celestial Elowiny Sphere that encases the entirety of the lightyear spanning hyperstructure.\n\nMadness."
+ vsbw.1.desc:0 "After a long 24 years, it is complete.\n[center_of_the_universe.GetName] has been successfully made into a Celestial $pc_void_birch$ that encases the entirety of the lightyear spanning hyperstructure.\n\nMadness."
 
  vsbw.1.a:0 "My eyes hurt."

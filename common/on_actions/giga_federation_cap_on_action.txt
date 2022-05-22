@@ -1,18 +1,18 @@
-#This = Federation leader
-#From = Joining member
-on_join_federation = {
-	events = {
-		giga_federation_cap.001 # make a federation scoped version of gigas planet/moon craft cap variable
-	}
-}
+# #This = Federation leader
+# #From = Joining member
+# on_join_federation = {
+# 	events = {
+# 		giga_federation_cap.001 # make a federation scoped version of gigas planet/moon craft cap variable
+# 	}
+# }
 
-# This = owner of ship 1 (destroyed)
-# From = owner of ship 2 (combatant)
-# FromFrom = ship 1
-# FromFromFrom = ship 2
-on_ship_destroyed_victim = {
-	events = {
-		giga_federation_cap.002 # lower variable for current number of moons when one is destroyed (for federation too)
-		giga_federation_cap.003 # lower variable for current number of planets when one is destroyed (for federation too)
-	}
-}
+# # This = owner of ship 1 (destroyed)
+# # From = owner of ship 2 (combatant)
+# # FromFrom = ship 1
+# # FromFromFrom = ship 2
+# on_ship_destroyed_victim = {
+# 	events = {
+# 		giga_federation_cap.002 # lower variable for current number of moons when one is destroyed (for federation too)
+# 		giga_federation_cap.003 # lower variable for current number of planets when one is destroyed (for federation too)
+# 	}
+# }
