@@ -6,6 +6,7 @@ dependencies={
 tags={
 	"Balance"
 }
+path="mod/gigastructures_perfectly_balanced/gigastructures_perfectly_balanced"
 picture="thumbnail.png"
 supported_version="3.4.*"
 remote_file_id="2550228661"
